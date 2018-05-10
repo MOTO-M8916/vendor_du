@@ -1,4 +1,9 @@
 # Boot Animation
+ifeq ($(filter osprey,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    vendor/du/prebuilt/common/media/720x1280.zip:system/media/bootanimation.zip
+endif
+
 ifeq ($(filter taimen,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/media/1440x2880.zip:system/media/bootanimation.zip
