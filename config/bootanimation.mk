@@ -1,5 +1,5 @@
 # Boot Animation
-ifeq ($(filter osprey,$(TARGET_PRODUCT)),)
+ifeq ($(filter osprey,harpia,lux,merlin,surnia,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/media/720x1280.zip:system/media/bootanimation.zip
 endif
