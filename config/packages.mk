@@ -1,8 +1,10 @@
 # Packages
 PRODUCT_PACKAGES += \
-    Turbo
+    DU-Fonts \
+    Turbo \
+    WallpaperPicker
 
-# Overlays
+# Accents
 PRODUCT_PACKAGES += \
     AmberAccent \
     BlackAccent \
@@ -12,8 +14,6 @@ PRODUCT_PACKAGES += \
     CyanAccent \
     DeepOrangeAccent \
     DeepPurpleAccent \
-    DuiDark \
-    GBoardDark \
     GreenAccent \
     GreyAccent \
     IndigoAccent \
@@ -24,15 +24,22 @@ PRODUCT_PACKAGES += \
     PinkAccent \
     PurpleAccent \
     RedAccent \
-    SettingsDark \
-    SystemDark \
     TealAccent \
     YellowAccent \
     WhiteAccent
 
-# Fonts
+# Analog clocks
 PRODUCT_PACKAGES += \
-    DU-Fonts
+    AnalogDeadpool \
+    AnalogDeepNight \
+    AnalogDu
+
+# Dark theme
+PRODUCT_PACKAGES += \
+    DuiDark \
+    GBoardDark \
+    SettingsDark \
+    SystemDark
 
 # Extra tools
 PRODUCT_PACKAGES += \

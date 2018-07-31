@@ -4,32 +4,27 @@ PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/media/720x1280.zip:system/media/bootanimation.zip
 endif
 
-ifeq ($(filter taimen,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/1440x2880.zip:system/media/bootanimation.zip
+ifneq ($(filter taimen,$(du_device)),)
+scr_resolution := 1440x2880
 endif
 
-ifeq ($(filter shamu angler,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/1440x2560.zip:system/media/bootanimation.zip
+ifneq ($(filter shamu marlin angler nash,$(du_device)),)
+scr_resolution := 1440x2560
 endif
 
-ifeq ($(filter dumpling,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/1080x2160.zip:system/media/bootanimation.zip
+ifneq ($(filter dumpling,$(du_device)),)
+scr_resolution := 1080x2160
 endif
 
-ifeq ($(filter hammerhead cheeseburger oneplus3 potter,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/1080x1920.zip:system/media/bootanimation.zip
+ifneq ($(filter tenderloin,$(du_device)),)
+scr_resolution := 768x1024
 endif
 
-ifeq ($(filter tenderloin,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/768x1024.zip:system/media/bootanimation.zip
+ifneq ($(filter dragon,$(du_device)),)
+scr_resolution := 1800x2560
 endif
 
-ifeq ($(filter dragon,$(TARGET_PRODUCT)),)
+ifneq ($(wildcard vendor/du/prebuilt/common/media/$(scr_resolution).zip),)
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/media/1800x2560.zip:system/media/bootanimation.zip
+    vendor/du/prebuilt/common/media/$(scr_resolution).zip:system/media/bootanimation.zip
 endif
